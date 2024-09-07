@@ -10,7 +10,7 @@ public class Fire : MonoBehaviour
     [SerializeField] private float _treeSpreadAcceleration;
     [SerializeField] private float flameAnimSpeed;
     [SerializeField] private float flameAnimHeight;
-
+    [SerializeField] private AudioClip flameExtinguishSFX;
     [HideInInspector] public List<Transform> flames = new List<Transform>();
     public Action OnFireExtinguished;
 
@@ -25,6 +25,7 @@ public class Fire : MonoBehaviour
         if (index == -1)
             return;
         flames.RemoveAt(index);
+        AudioSource.PlayClipAtPoint(flameExtinguishSFX, flame.position, 1);
         Destroy(flame.gameObject);
 
         if (flames.Count == 0)
