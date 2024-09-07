@@ -4,11 +4,17 @@ using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
-    public Action PlayerJoined;
+    public Action<Character> PlayerJoined;
 
     public void OnPlayerJoined(PlayerInput playerInput)
     {
-        Debug.Log("Player joined");
-        PlayerJoined?.Invoke();
+        if (playerInput.TryGetComponent(out Character character))
+        {
+            PlayerJoined?.Invoke(character);
+        }
+        else
+        {
+            Debug.LogError("YOU HAVE ROYALY SCREWED, BITCH");
+        }
     }
 }

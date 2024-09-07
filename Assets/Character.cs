@@ -1,21 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Character : MonoBehaviour
 {
     Rigidbody2D body;
-
-    /*
-    float horizontal;
-    float vertical;
-
-    public UnityEvent<Vector2> leftStick;
-    public UnityEvent<Vector2> rightStick;
-
-    Vector2 lookAtPos;
-    */
 
     private Vector2 inputMove = Vector2.zero;
     private Vector2 inputTurn = Vector2.zero;
@@ -24,9 +13,12 @@ public class Character : MonoBehaviour
 
     public float moveSpeed = 1.0f;
 
+    public Action<Character> _onDeath;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(gameObject);
+        _onDeath?.Invoke(this);
+        gameObject.SetActive(false);
     }
 
     void Start()
