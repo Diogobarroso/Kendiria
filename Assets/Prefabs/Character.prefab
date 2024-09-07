@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 2315561603437443280}
   - component: {fileID: 2226008393315247359}
   - component: {fileID: 5384465362815188359}
+  - component: {fileID: 5797970788027968373}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -233,6 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 0}
+  inputTurn: {x: 0, y: 0}
   moveSpeed: 5
   playerColor: {fileID: 3287627715401947288}
 --- !u!50 &2049662737432298063
@@ -434,11 +436,40 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 52cf915d-0e63-41d4-a96b-700bace5b141
     m_ActionName: Player/Ready[/DualSenseGamepadHID/start,/XInputControllerWindows/start,/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5797970788027968373}
+        m_TargetAssemblyTypeName: AutoAim, Assembly-CSharp
+        m_MethodName: ToggleAutoAim
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 784163b6-ba0c-4129-af5b-bd628d83d8be
+    m_ActionName: Player/ToggleAutoAim[/XInputControllerWindows/leftTrigger,/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &5797970788027968373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2950179275512321020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c892a8cf77bce4644b6d8de46c4022ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 0
 --- !u!1 &4252547325419432263
 GameObject:
   m_ObjectHideFlags: 0

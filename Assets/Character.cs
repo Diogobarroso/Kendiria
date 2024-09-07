@@ -7,7 +7,7 @@ public class Character : MonoBehaviour
     public Rigidbody2D body;
 
     private Vector2 inputMove = Vector2.zero;
-    private Vector2 inputTurn = Vector2.zero;
+    public Vector2 inputTurn = Vector2.zero;
 
     private float turnDir = 0.0f;
 
