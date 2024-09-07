@@ -1,16 +1,14 @@
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Action PlayerJoined;
 
-    // Update is called once per frame
-    void Update()
+    public void OnPlayerJoined(PlayerInput playerInput)
     {
-        
+        Debug.Log("Player joined");
+        PlayerJoined?.Invoke();
     }
 }

@@ -280,6 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1401222567}
   - component: {fileID: 1401222568}
+  - component: {fileID: 1401222569}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -314,6 +315,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 543722882c36cdf4c829725dd799cf9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1401222569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401222566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NotificationBehavior: 2
+  m_MaxPlayerCount: -1
+  m_AllowJoining: 1
+  m_JoinBehavior: 0
+  m_PlayerJoinedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1401222568}
+        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
+        m_MethodName: OnPlayerJoined
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_PlayerLeftEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_JoinAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 04695a49-9059-4514-aa72-2d39ccf630f5
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_PlayerPrefab: {fileID: 2950179275512321020, guid: 2b725538c56635e45839ff673a0ab599, type: 3}
+  m_SplitScreen: 0
+  m_MaintainAspectRatioInSplitScreen: 0
+  m_FixedNumberOfSplitScreens: -1
+  m_SplitScreenRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1001 &2006086162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -444,6 +501,10 @@ PrefabInstance:
     - target: {fileID: 2950179275512321020, guid: 2b725538c56635e45839ff673a0ab599, type: 3}
       propertyPath: m_Name
       value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 2950179275512321020, guid: 2b725538c56635e45839ff673a0ab599, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7734177465495701033, guid: 2b725538c56635e45839ff673a0ab599, type: 3}
       propertyPath: m_Pivot.x

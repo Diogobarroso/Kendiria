@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
@@ -11,6 +12,8 @@ public class MainMenuController : MonoBehaviour
 
     [SerializeField] private GameObject _mainMenu;
     [SerializeField] private GameObject _credits;
+
+    [SerializeField] private string _gameSceneName = "MainGameScene";
 
     void Start()
     {
@@ -39,6 +42,6 @@ public class MainMenuController : MonoBehaviour
 
     private void StartGame()
     {
-        throw new NotImplementedException();
+        SceneManager.LoadScene(_gameSceneName);
     }
 }
