@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flamePrefab: {fileID: 4196536976837328705, guid: 6d32a313032f9ab41a4b0ebd342c24e8, type: 3}
-  flameSpreadSpeed: 1
+  flameSpreadSpeed: 0.25
   flameSpreadDistance: 1.2
+  _treeSpreadAcceleration: 8
   flameAnimSpeed: 5
   flameAnimHeight: 0.5

@@ -98,6 +98,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8a6cdf56f2bda4abbad4f86ec49132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxHealth: 10
+  _burningDamage: 2
+  _fireLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _collider: {fileID: -6808015680653461294}
+  _spriteRenderer: {fileID: 8322763362556039103}
 --- !u!58 &-6808015680653461294
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -127,7 +134,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
