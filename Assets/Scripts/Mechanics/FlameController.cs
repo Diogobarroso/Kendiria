@@ -63,4 +63,12 @@ public class FlameController : MonoBehaviour
 
         return currentSpreadSpeed;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.TryGetComponent(out WaterController _))
+        {
+            _fire.TryExtinguish(transform);
+        }
+    }
 }

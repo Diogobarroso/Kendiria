@@ -11,11 +11,25 @@ public class Fire : MonoBehaviour
     [SerializeField] private float flameAnimSpeed;
     [SerializeField] private float flameAnimHeight;
 
-    [HideInInspector] public static List<Transform> flames = new List<Transform>();
+    private List<Transform> flames = new List<Transform>();
 
     private void Start()
     {
         AddFlame(transform.position);
+    }
+
+    public void TryExtinguish(Transform flame)
+    {
+        int index = flames.FindIndex(a => a != null && a.transform == flame);
+        if (index == -1)
+            return;
+        flames.RemoveAt(index);
+        Destroy(flame.gameObject);
+
+        if (flames.Count == 0)
+        {
+            Debug.Log("You won!");
+        }
     }
 
     public void AddFlame(Vector3 position)
@@ -45,7 +59,7 @@ public class Fire : MonoBehaviour
         return flameAnimSpeed;
     }
 
-    internal float GetTreeSpreadAcceleration()
+    public float GetTreeSpreadAcceleration()
     {
         return _treeSpreadAcceleration;
     }

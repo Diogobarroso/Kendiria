@@ -10,15 +10,6 @@ public class WaterController : MonoBehaviour
 
     private float time = 0.0f;
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        int index = Fire.flames.FindIndex(a => a != null && a.transform == other.transform);
-        if (index == -1)
-            return;
-        Fire.flames.RemoveAt(index);
-        Destroy(other.gameObject);
-    }
-
     private void Update()
     {
         time += Time.deltaTime;
