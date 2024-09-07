@@ -3,6 +3,8 @@ using UnityEngine;
 public class FlameController : MonoBehaviour
 {
     [SerializeField] private LayerMask _treeSpreadAccelerationLayerMask;
+    
+    [SerializeField] private LayerMask _noBurnLayerMask;
 
     private Fire _fire;
 
@@ -39,8 +41,7 @@ public class FlameController : MonoBehaviour
         for (float angle = initialAngle; angle < 360.0f + initialAngle; angle += 360.0f/5) // Check an even spacing around the flame
         {
             Vector3 newFlamePosition = transform.position + Quaternion.AngleAxis(angle, Vector3.back) * Vector3.up * _fire.GetFlameSpreadDistance();
-            LayerMask fireLayerMask = LayerMask.GetMask("Fire");
-            RaycastHit2D hitInfo = Physics2D.CircleCast(newFlamePosition, 0.5f, Vector2.zero, Mathf.Infinity, fireLayerMask);
+            RaycastHit2D hitInfo = Physics2D.CircleCast(newFlamePosition, 0.5f, Vector2.zero, Mathf.Infinity, _noBurnLayerMask);
 
             if (hitInfo.collider == null)
             {
