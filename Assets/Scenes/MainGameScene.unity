@@ -734,6 +734,13 @@ MonoBehaviour:
   _playerManager: {fileID: 1401222568}
   _joinInstructions: {fileID: 2000803106}
   _fire: {fileID: 2006086163}
+  playerColors:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 1, a: 0}
+  - {r: 0, g: 1, b: 0, a: 0}
+  - {r: 1, g: 1, b: 0, a: 0}
+  - {r: 1, g: 0, b: 1, a: 0}
+  - {r: 0, g: 1, b: 1, a: 0}
 --- !u!4 &2100875491
 Transform:
   m_ObjectHideFlags: 0

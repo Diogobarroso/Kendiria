@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Fire _fire;
 
     private List<Character> _players = new List<Character>();
+    [SerializeField] private List<Color> playerColors;
 
     private void Start()
     {
@@ -35,5 +36,7 @@ public class LevelManager : MonoBehaviour
             // TODO GAME OVER
             Debug.Log("Game Over");
         }
+
+        character.SetColor(playerColors[_players.IndexOf(character)]);
     }
 }
