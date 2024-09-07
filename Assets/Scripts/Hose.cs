@@ -9,7 +9,6 @@ public class Hose : MonoBehaviour
     [SerializeField] private float hosingSpeed;
 
     private float hosingTime = 0.0f;
-    private float timeSinceLastHose = 0.0f;
 
     bool isHoseActive = false;
 
@@ -23,20 +22,18 @@ public class Hose : MonoBehaviour
 
     void Update()
     {
-        timeSinceLastHose += Time.deltaTime;
         if (isHoseActive)
         {
             HoseBeforeHoes();
         }
-    }
-    public void HoseBeforeHoes()
-    {
-        if (timeSinceLastHose > 0.5f)
+        else
         {
             hosingTime = 0.0f;
         }
+    }
+    public void HoseBeforeHoes()
+    {
         hosingTime += Time.deltaTime;
-        timeSinceLastHose = 0.0f;
 
         if (hosingTime > 1 / hosingSpeed)
         {
