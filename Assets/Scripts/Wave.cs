@@ -4,6 +4,7 @@ using UnityEngine;
 public class Wave : ScriptableObject
 {
     public Vector2[] initialFlamesPosition;
+    [Range(0, 10)]
     public float windSpeed;
     public Vector2 windDirection;
     public float flameSpreadSpeed;
