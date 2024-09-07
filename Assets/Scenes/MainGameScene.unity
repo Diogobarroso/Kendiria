@@ -813,6 +813,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2383882519382305090, guid: 2b725538c56635e45839ff673a0ab599, type: 3}
+      propertyPath: water
+      value: 
+      objectReference: {fileID: 7147060344415365436, guid: b374555e6d91ed5489538adea4589ec2, type: 3}
     - target: {fileID: 2950179275512321020, guid: 2b725538c56635e45839ff673a0ab599, type: 3}
       propertyPath: m_Name
       value: Character
@@ -820,14 +824,6 @@ PrefabInstance:
     - target: {fileID: 2950179275512321020, guid: 2b725538c56635e45839ff673a0ab599, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5384465362815188359, guid: 2b725538c56635e45839ff673a0ab599, type: 3}
-      propertyPath: m_DefaultControlScheme
-      value: Gamepad
-      objectReference: {fileID: 0}
-    - target: {fileID: 5384465362815188359, guid: 2b725538c56635e45839ff673a0ab599, type: 3}
-      propertyPath: m_NeverAutoSwitchControlSchemes
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7734177465495701033, guid: 2b725538c56635e45839ff673a0ab599, type: 3}
       propertyPath: m_Pivot.x
@@ -911,10 +907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 7734177465495701033, guid: 2b725538c56635e45839ff673a0ab599, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 312220756}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b725538c56635e45839ff673a0ab599, type: 3}
 --- !u!1660057539 &9223372036854775807

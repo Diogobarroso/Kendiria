@@ -11,26 +11,26 @@ public class Hose : MonoBehaviour
     private float hosingTime = 0.0f;
     private float timeSinceLastHose = 0.0f;
 
+    bool isHoseActive = false;
+
     [SerializeField] private InputActionAsset controls;
 
     private void Awake()
     {
-        controls.FindActionMap("Player").FindAction("Fire").performed += ctx => HoseBeforeHoes();
+        controls.FindActionMap("Player").FindAction("Fire").performed += ctx => isHoseActive = true;
+        controls.FindActionMap("Player").FindAction("Fire").canceled += ctx => isHoseActive = false;
     }
 
     void Update()
     {
         timeSinceLastHose += Time.deltaTime;
-        /*
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (isHoseActive)
         {
             HoseBeforeHoes();
-        }*/
+        }
     }
-    
     public void HoseBeforeHoes()
     {
-        Debug.Log("WHERE MY HOES AT");
         if (timeSinceLastHose > 0.5f)
         {
             hosingTime = 0.0f;

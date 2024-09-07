@@ -271,7 +271,19 @@ MonoBehaviour:
     m_ActionId: fceb6b6d-a186-4c89-9bd5-f08e4a5e304e
     m_ActionName: Player/Look[/XInputControllerWindows/rightStick]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2383882519382305090}
+        m_TargetAssemblyTypeName: Hose, Assembly-CSharp
+        m_MethodName: HoseBeforeHoes
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: c9e7a605-f76c-4a4f-ad0b-0cbbd9a6f81e
     m_ActionName: Player/Fire[/XInputControllerWindows/rightTrigger]
   - m_PersistentCalls:
@@ -314,8 +326,8 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 3d7390cf-cfbd-4cc9-9f7e-5993669af213
     m_ActionName: UI/TrackedDeviceOrientation
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -367,6 +379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428918cab56c6f644bf599b4319a4a24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  water: {fileID: 0}
+  water: {fileID: 7147060344415365436, guid: b374555e6d91ed5489538adea4589ec2, type: 3}
   hosingSpeed: 1
   controls: {fileID: -944628639613478452, guid: cf3bf2dcc149e89469e065882fa2bc75, type: 3}
