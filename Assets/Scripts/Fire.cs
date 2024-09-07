@@ -10,9 +10,9 @@ public class Fire : MonoBehaviour
     [SerializeField] private float flameAnimSpeed;
     [SerializeField] private float flameAnimHeight;
 
-    private List<Transform> flames = new List<Transform>();
-    private List<float> flameAnimOffset = new List<float>();
-    private List<Vector2> flameBasePositions = new List<Vector2>();
+    [HideInInspector] public static List<Transform> flames = new List<Transform>();
+    [HideInInspector] public static List<float> flameAnimOffset = new List<float>();
+    [HideInInspector] public static List<Vector2> flameBasePositions = new List<Vector2>();
 
     private float animTime = 0.0f;
     private float spreadTime = 0.0f;
