@@ -1,4 +1,5 @@
 using System;
+//using System.Numerics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,6 +20,8 @@ public class Character : MonoBehaviour
     bool isDead = false;
 
     public Action OnReady;
+    
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -49,10 +52,30 @@ public class Character : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         inputMove = context.ReadValue<Vector2>();
+        if(inputMove.magnitude!=0){
+            if(!GetComponent<AudioSource>().isPlaying){
+                GetComponent<AudioSource>().loop=true;
+                GetComponent<AudioSource>().Play();
+
+            }
+        }
+        else{
+            GetComponent<AudioSource>().loop = false;
+
+        }
     }
 
     public void OnLook(InputAction.CallbackContext context)
     {
+
+        if(context.control.device.description.deviceClass == "Mouse"){
+            
+            Vector3 mouseRelativeToPlayer = Input.mousePosition-Camera.main.WorldToScreenPoint(transform.position);
+            turnDir = Mathf.Atan2(mouseRelativeToPlayer.y, mouseRelativeToPlayer.x);
+
+
+            return;
+        }
         Vector2 inputTurn = context.ReadValue<Vector2>();
         turnDir = Mathf.Atan2(inputTurn.y, inputTurn.x);
     }
