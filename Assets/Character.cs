@@ -14,6 +14,7 @@ public class Character : MonoBehaviour
     public float moveSpeed = 1.0f;
 
     public Action<Character> _onDeath;
+    [SerializeField] private SpriteRenderer playerColor;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -24,10 +25,6 @@ public class Character : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-    }
-
-    void Update()
-    {
     }
 
     private void FixedUpdate()
@@ -52,5 +49,10 @@ public class Character : MonoBehaviour
     {
         Vector2 inputTurn = context.ReadValue<Vector2>();
         turnDir = Mathf.Atan2(inputTurn.y, inputTurn.x);
+    }
+
+    public void SetColor(Color color)
+    {
+        playerColor.color = color;
     }
 }
