@@ -25,6 +25,8 @@ public class LevelManager : MonoBehaviour
 
         _players.Add(character);
         character._onDeath += OnPlayerDeath;
+
+        character.SetColor(playerColors[_players.IndexOf(character)]);
     }
 
     private void OnPlayerDeath(Character character)
@@ -36,7 +38,5 @@ public class LevelManager : MonoBehaviour
             // TODO GAME OVER
             Debug.Log("Game Over");
         }
-
-        character.SetColor(playerColors[_players.IndexOf(character)]);
     }
 }

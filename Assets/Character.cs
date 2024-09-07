@@ -16,10 +16,16 @@ public class Character : MonoBehaviour
     public Action<Character> _onDeath;
     [SerializeField] private SpriteRenderer playerColor;
 
+    bool isDead = false;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
+        isDead = true;
         _onDeath?.Invoke(this);
-        gameObject.SetActive(false);
+
+        body.isKinematic = true;
+        body.velocity = Vector2.zero;
+        GetComponent<Collider2D>().enabled = false;
     }
 
     void Start()
@@ -29,6 +35,9 @@ public class Character : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isDead)
+            return;
+
         body.velocity = inputMove * moveSpeed;
 
         if (turnDir != 0.0f)
