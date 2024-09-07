@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class WaterController : MonoBehaviour
 {
-    public Vector3 direction;
+    [HideInInspector] public Vector3 direction;
+    [HideInInspector] public Vector3 baseSpeed;
     [SerializeField] private float waterSpeed;
     [SerializeField] private float lifeTime;
 
@@ -21,6 +22,6 @@ public class WaterController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        transform.position += direction * waterSpeed * Time.deltaTime;
+        transform.position += baseSpeed * Time.deltaTime + direction * waterSpeed * Time.deltaTime;
     }
 }

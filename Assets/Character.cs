@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class Character : MonoBehaviour
 {
-    Rigidbody2D body;
+    public Rigidbody2D body;
 
     private Vector2 inputMove = Vector2.zero;
     private Vector2 inputTurn = Vector2.zero;
