@@ -4,6 +4,7 @@ public class WaterController : MonoBehaviour
 {
     [HideInInspector] public Vector3 direction;
     [HideInInspector] public Vector3 baseSpeed;
+    [HideInInspector] public Fire fire;
     [SerializeField] private float waterSpeed;
     [SerializeField] private float lifeTime;
 
@@ -11,6 +12,12 @@ public class WaterController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        int index = Fire.flames.FindIndex(a => a.transform == other.transform);
+        if (index == -1)
+            return;
+        Fire.flames.RemoveAt(index);
+        Fire.flameAnimOffset.RemoveAt(index);
+        Fire.flameBasePositions.RemoveAt(index);
         Destroy(other.gameObject);
     }
 
