@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d122770650b096d4da4a23ae37cfdede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flamePrefab: {fileID: 8254761840027708824, guid: 6d32a313032f9ab41a4b0ebd342c24e8, type: 3}
+  flamePrefab: {fileID: 4196536976837328705, guid: 6d32a313032f9ab41a4b0ebd342c24e8, type: 3}
   flameSpreadSpeed: 1
   flameSpreadDistance: 1.2
   flameAnimSpeed: 5

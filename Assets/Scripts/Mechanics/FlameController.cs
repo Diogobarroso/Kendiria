@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class FlameController : MonoBehaviour
 {
+    [SerializeField] private LayerMask _treeSpreadAccelerationLayerMask;
+
     private Fire _fire;
 
     private float spreadTime = 0.0f;
@@ -49,8 +51,16 @@ public class FlameController : MonoBehaviour
         spreadTime = 0.0f;
     }
 
-    public float CalculateSpreadSpeed()
+    private float CalculateSpreadSpeed()
     {
-        return _fire.GetFlameSpreadSpeed();
+        float currentSpreadSpeed = _fire.GetFlameSpreadSpeed();
+
+        RaycastHit2D hitInfo = Physics2D.CircleCast(transform.position, 0.5f, Vector2.zero, Mathf.Infinity, _treeSpreadAccelerationLayerMask);
+        if (hitInfo.collider != null)
+        {
+            currentSpreadSpeed *= _fire.GetTreeSpreadAcceleration();
+        }
+
+        return currentSpreadSpeed;
     }
 }

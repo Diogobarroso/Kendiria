@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class Fire : MonoBehaviour
     [SerializeField] private FlameController flamePrefab;
     [SerializeField] private float flameSpreadSpeed;
     [SerializeField] private float flameSpreadDistance;
+    [SerializeField] private float _treeSpreadAcceleration;
     [SerializeField] private float flameAnimSpeed;
     [SerializeField] private float flameAnimHeight;
 
@@ -41,5 +43,10 @@ public class Fire : MonoBehaviour
     public float GetFlameAnimSpeed()
     {
         return flameAnimSpeed;
+    }
+
+    internal float GetTreeSpreadAcceleration()
+    {
+        return _treeSpreadAcceleration;
     }
 }
