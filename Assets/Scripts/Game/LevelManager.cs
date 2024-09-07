@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
@@ -11,14 +9,16 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject _joinInstructions;
     [SerializeField] private GameObject _gameOverScreen;
     [SerializeField] private TextMeshProUGUI _waveCounter;
-    // TODO: Fire "waves"?
-    [SerializeField] private Fire _fire;
+    [SerializeField] private Fire _firePrefab;
 
     private List<Character> _players = new List<Character>();
     [SerializeField] private List<Color> playerColors;
 
     [SerializeField] private List<Wave> waves;
-    private int currentWave = 0;
+    private int currentWave = -1;
+    [SerializeField] private float _timeBetweenWaves = 5.0f;
+    private float _startWaveTimer = 0.0f;
+    private Fire _currentWaveFire = null;
 
     private void Start()
     {
@@ -27,15 +27,55 @@ public class LevelManager : MonoBehaviour
         _waveCounter.text = 1 + "/" + waves.Count;
     }
 
+    private void Update()
+    {
+        if (_startWaveTimer > 0.0f)
+        {
+            _startWaveTimer -= Time.deltaTime;
+
+            if (_startWaveTimer <= 0.0f)
+            {
+                _currentWaveFire.gameObject.SetActive(true);
+                _waveCounter.text = (currentWave + 1) + "/" + waves.Count;
+            }
+        }
+    }
+
     private void OnPlayerJoined(Character character)
     {
-        _fire.gameObject.SetActive(true);
         _joinInstructions.SetActive(false);
 
         _players.Add(character);
+        character.OnReady += OnPlayerReady;
         character._onDeath += OnPlayerDeath;
 
         character.SetColor(playerColors[_players.IndexOf(character)]);
+    }
+
+    private void OnPlayerReady()
+    {
+        if (currentWave == -1) StartNextWave();
+    }
+
+    private void StartNextWave()
+    {
+        if (_currentWaveFire != null &&_currentWaveFire.flames.Count > 0) return;
+
+        currentWave++;
+
+        if (_currentWaveFire != null)
+            Destroy(_currentWaveFire.gameObject);
+        
+        _currentWaveFire = Instantiate(_firePrefab, Vector2.zero, Quaternion.identity);
+        _currentWaveFire.gameObject.SetActive(false);
+        _currentWaveFire.OnFireExtinguished += OnFireExtinguished;
+
+        foreach (var position in waves[currentWave].initialFlamesPosition)
+        {
+            _currentWaveFire.AddFlame(position);
+        }
+
+        _startWaveTimer = _timeBetweenWaves;
     }
 
     private void OnPlayerDeath(Character character)
@@ -59,10 +99,16 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
     
-    //Connect sth here? Maybe Fire?
     public void OnFireExtinguished()
     {
-        _waveCounter.text = currentWave+1 + "/" + waves.Count;
-        //Load new wave
+        if (currentWave == waves.Count - 1)
+        {
+            _gameOverScreen.SetActive(true);
+            _playerManager.DisableJoining();
+        }
+        else
+        {
+            StartNextWave();
+        }
     }
 }

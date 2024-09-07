@@ -11,11 +11,12 @@ public class Fire : MonoBehaviour
     [SerializeField] private float flameAnimSpeed;
     [SerializeField] private float flameAnimHeight;
 
-    private List<Transform> flames = new List<Transform>();
+    [HideInInspector] public List<Transform> flames = new List<Transform>();
+    public Action OnFireExtinguished;
 
     private void Start()
     {
-        AddFlame(transform.position);
+        //AddFlame(transform.position);
     }
 
     public void TryExtinguish(Transform flame)
@@ -28,7 +29,7 @@ public class Fire : MonoBehaviour
 
         if (flames.Count == 0)
         {
-            Debug.Log("You won!");
+            OnFireExtinguished?.Invoke();
         }
     }
 

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87cd586163291404abb35e6ee6c711f3, type: 3}
   m_Name: Wave3
   m_EditorClassIdentifier: 
-  initialFlames: 5
+  initialFlamesPosition:
+  - {x: 5.76, y: -0.13}
   windSpeed: 0
   windDirection: {x: 0, y: 0}
   flameSpreadSpeed: 1

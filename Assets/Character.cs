@@ -18,6 +18,8 @@ public class Character : MonoBehaviour
 
     bool isDead = false;
 
+    public Action OnReady;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         isDead = true;
@@ -53,6 +55,14 @@ public class Character : MonoBehaviour
     {
         Vector2 inputTurn = context.ReadValue<Vector2>();
         turnDir = Mathf.Atan2(inputTurn.y, inputTurn.x);
+    }
+
+    public void OnReadyUp(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            OnReady?.Invoke();
+        }
     }
 
     public void SetColor(Color color)
