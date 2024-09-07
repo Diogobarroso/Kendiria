@@ -46,4 +46,9 @@ public class LevelManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
