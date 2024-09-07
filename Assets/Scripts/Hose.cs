@@ -14,6 +14,8 @@ public class Hose : MonoBehaviour
 
     [SerializeField] private InputActionAsset controls;
 
+    private Vector3 lastFramePosition;
+
     private void Awake()
     {
         controls.FindActionMap("Player").FindAction("Fire").performed += ctx => isHoseActive = true;
@@ -30,6 +32,8 @@ public class Hose : MonoBehaviour
         {
             hosingTime = 0.0f;
         }
+
+        lastFramePosition = this.transform.position;
     }
     public void HoseBeforeHoes()
     {
@@ -41,6 +45,7 @@ public class Hose : MonoBehaviour
             newWater.transform.position = this.transform.position;
             newWater.transform.rotation = this.transform.parent.rotation;
             newWater.GetComponent<WaterController>().direction = this.transform.parent.right;
+            newWater.GetComponent<WaterController>().baseSpeed = this.transform.parent.GetComponent<Character>().body.velocity;
         }
     }
 }
