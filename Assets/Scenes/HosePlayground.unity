@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e037b08b999bbf40945f3fdda3e26d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 643269024168862774, guid: a7396084fa1a5d64091a3f0768e6d4f3, type: 3}
+  _prefab: {fileID: 1276514521322354104, guid: 6d32a313032f9ab41a4b0ebd342c24e8, type: 3}
   _spawnRate: 2
   _spawnHolder: {fileID: 873215048}
   _spawnedObjectsSpeed: 0
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e037b08b999bbf40945f3fdda3e26d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 643269024168862774, guid: a7396084fa1a5d64091a3f0768e6d4f3, type: 3}
+  _prefab: {fileID: 1276514521322354104, guid: 6d32a313032f9ab41a4b0ebd342c24e8, type: 3}
   _spawnRate: 2
   _spawnHolder: {fileID: 1695521308}
   _spawnedObjectsSpeed: 0
