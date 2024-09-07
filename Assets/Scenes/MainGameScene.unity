@@ -1164,6 +1164,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5542875894568775699, guid: 2de4d770e1a5c46418cfcfe87d27551b, type: 3}
+      propertyPath: flamePrefab
+      value: 
+      objectReference: {fileID: 4196536976837328705, guid: 6d32a313032f9ab41a4b0ebd342c24e8, type: 3}
     - target: {fileID: 8847358621441349684, guid: 2de4d770e1a5c46418cfcfe87d27551b, type: 3}
       propertyPath: m_Name
       value: Fire

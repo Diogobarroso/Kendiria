@@ -16,8 +16,6 @@ public class WaterController : MonoBehaviour
         if (index == -1)
             return;
         Fire.flames.RemoveAt(index);
-        Fire.flameAnimOffset.RemoveAt(index);
-        Fire.flameBasePositions.RemoveAt(index);
         Destroy(other.gameObject);
     }
 
