@@ -38,7 +38,7 @@ public class LevelManager : MonoBehaviour
         if (_players.Count == 0)
         {
             _gameOverScreen.SetActive(true);
-            Debug.Log("Game Over");
+            _playerManager.DisableJoining();
         }
     }
 

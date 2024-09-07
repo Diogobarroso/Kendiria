@@ -17,4 +17,9 @@ public class PlayerManager : MonoBehaviour
             Debug.LogError("YOU HAVE ROYALY SCREWED, BITCH");
         }
     }
+
+    public void DisableJoining()
+    {
+        GetComponent<PlayerInputManager>().DisableJoining();
+    }
 }
