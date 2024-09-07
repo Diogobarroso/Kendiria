@@ -207,4 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efb1c8223ca721a419f0896888e72fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 1
+  direction: {x: 0, y: 0, z: 0}
+  waterSpeed: 5
+  lifeTime: 0.5
