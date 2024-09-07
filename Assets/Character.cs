@@ -49,11 +49,6 @@ public class Character : MonoBehaviour
         inputMove = context.ReadValue<Vector2>();
     }
 
-    public void OnFire(InputAction.CallbackContext context)
-    {
-        
-    }
-
     public void OnLook(InputAction.CallbackContext context)
     {
         Vector2 inputTurn = context.ReadValue<Vector2>();

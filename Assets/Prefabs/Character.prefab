@@ -232,6 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a485c8d5a770a94aa0c88af34985728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  body: {fileID: 0}
   moveSpeed: 5
   playerColor: {fileID: 3287627715401947288}
 --- !u!50 &2049662737432298063
@@ -365,7 +366,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2383882519382305090}
         m_TargetAssemblyTypeName: Hose, Assembly-CSharp
-        m_MethodName: HoseBeforeHoes
+        m_MethodName: OnFireHose
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

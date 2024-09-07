@@ -18,8 +18,6 @@ public class Hose : MonoBehaviour
 
     private void Awake()
     {
-        controls.FindActionMap("Player").FindAction("Fire").performed += ctx => isHoseActive = true;
-        controls.FindActionMap("Player").FindAction("Fire").canceled += ctx => isHoseActive = false;
     }
 
     void Update()
@@ -35,6 +33,12 @@ public class Hose : MonoBehaviour
 
         lastFramePosition = this.transform.position;
     }
+
+    public void OnFireHose(InputAction.CallbackContext context)
+    {
+        isHoseActive = context.ReadValueAsButton();
+    }
+
     public void HoseBeforeHoes()
     {
         hosingTime += Time.deltaTime;
