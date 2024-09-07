@@ -3,6 +3,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private PlayerManager _playerManager;
+    [SerializeField] private GameObject _joinInstructions;
     // TODO: Fire "waves"?
     [SerializeField] private Fire _fire;
 
@@ -14,5 +15,6 @@ public class LevelManager : MonoBehaviour
     private void OnPlayerJoined()
     {
         _fire.gameObject.SetActive(true);
+        _joinInstructions.SetActive(false);
     }
 }

@@ -1,5 +1,5 @@
 {
-    "name": "Kendiria",
+    "name": "PlayerControls",
     "maps": [
         {
             "name": "Player",
@@ -27,6 +27,15 @@
                     "name": "Fire",
                     "type": "Button",
                     "id": "c9e7a605-f76c-4a4f-ad0b-0cbbd9a6f81e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ready",
+                    "type": "Button",
+                    "id": "52cf915d-0e63-41d4-a96b-700bace5b141",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -251,6 +260,28 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5bec800d-344b-4980-ad7a-1553ec0a1045",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ready",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1f264c36-418a-4577-b57a-dbef89708086",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Ready",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
