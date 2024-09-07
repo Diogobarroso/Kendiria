@@ -50,3 +50,5 @@ MonoBehaviour:
   _treeSpreadAcceleration: 8
   flameAnimSpeed: 5
   flameAnimHeight: 0.5
+  flameExtinguishSFX: {fileID: 8300000, guid: 26be6d11ecb83264d88d9edcd0780875, type: 3}
+  flames: []
