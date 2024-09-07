@@ -326,6 +326,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 3d7390cf-cfbd-4cc9-9f7e-5993669af213
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 52cf915d-0e63-41d4-a96b-700bace5b141
+    m_ActionName: Player/Ready[/XInputControllerWindows/start,/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player

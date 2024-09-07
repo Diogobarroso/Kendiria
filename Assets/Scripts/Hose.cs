@@ -37,7 +37,10 @@ public class Hose : MonoBehaviour
 
         if (hosingTime > 1 / hosingSpeed)
         {
-            Instantiate(water, this.transform);
+            GameObject newWater = Instantiate(water);
+            newWater.transform.position = this.transform.position;
+            newWater.transform.rotation = this.transform.parent.rotation;
+            newWater.GetComponent<WaterController>().direction = this.transform.parent.right;
         }
     }
 }
