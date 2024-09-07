@@ -12,7 +12,7 @@ public class WaterController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        int index = Fire.flames.FindIndex(a => a.transform == other.transform);
+        int index = Fire.flames.FindIndex(a => a != null && a.transform == other.transform);
         if (index == -1)
             return;
         Fire.flames.RemoveAt(index);
