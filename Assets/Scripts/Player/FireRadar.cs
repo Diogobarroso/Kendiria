@@ -31,6 +31,17 @@ public class FireRadar : MonoBehaviour
         if (flames.Count == 0)
             return;
 
+        while (flames[0] == null)
+        {
+            flames.RemoveAt(0);
+            
+            if (flames.Count == 0)
+            {
+                _spriteRenderer.enabled = false;
+                return;
+            }
+        }
+        
         Vector2 direction = (flames[0].position - transform.parent.position).normalized;
         // TODO I don't have enough energy to make this magic values into configurable variables
         transform.position = (Vector2) transform.parent.position + direction * 0.75f;
