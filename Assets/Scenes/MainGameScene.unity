@@ -506,6 +506,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5384465362815188359, guid: 2b725538c56635e45839ff673a0ab599, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Gamepad
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384465362815188359, guid: 2b725538c56635e45839ff673a0ab599, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7734177465495701033, guid: 2b725538c56635e45839ff673a0ab599, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
