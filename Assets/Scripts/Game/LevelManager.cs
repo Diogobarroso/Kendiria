@@ -22,6 +22,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private float _timeBetweenWaves = 5.0f;
     private float _startWaveTimer = 0.0f;
     public Fire _currentWaveFire = null;
+    public Action<List<Transform>> OnWaveStart;
 
     private void Start()
     {
@@ -53,6 +54,8 @@ public class LevelManager : MonoBehaviour
                 
                 _currentWaveFire.gameObject.SetActive(true);
                 _waveCounter.text = (currentWave + 1) + "/" + waves.Count;
+
+                OnWaveStart?.Invoke(_currentWaveFire.flames);
             }
         }
     }
