@@ -7,6 +7,9 @@ public class Hose : MonoBehaviour
 {
     [SerializeField] private GameObject water;
     [SerializeField] private float hosingSpeed;
+    [SerializeField] private AudioSource hoseStartSFX;
+    [SerializeField] private AudioSource hoseWaterSFX;
+
 
     private float hosingTime = 0.0f;
 
@@ -29,6 +32,7 @@ public class Hose : MonoBehaviour
         else
         {
             hosingTime = 0.0f;
+            hoseWaterSFX.Stop();
         }
 
         lastFramePosition = this.transform.position;
@@ -41,10 +45,17 @@ public class Hose : MonoBehaviour
 
     public void HoseBeforeHoes()
     {
+        if(hosingTime == 0){
+            hoseStartSFX.Play();
+        }
+        
         hosingTime += Time.deltaTime;
 
         if (hosingTime > 1 / hosingSpeed)
         {
+            if(!hoseWaterSFX.isPlaying){
+                hoseWaterSFX.Play();
+            }
             GameObject newWater = Instantiate(water);
             newWater.transform.position = this.transform.position;
             newWater.transform.rotation = this.transform.parent.rotation;
