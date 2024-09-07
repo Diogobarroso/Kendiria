@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private PlayerManager _playerManager;
     [SerializeField] private GameObject _joinInstructions;
+    [SerializeField] private GameObject _gameOverScreen;
     // TODO: Fire "waves"?
     [SerializeField] private Fire _fire;
 
@@ -35,8 +37,13 @@ public class LevelManager : MonoBehaviour
 
         if (_players.Count == 0)
         {
-            // TODO GAME OVER
+            _gameOverScreen.SetActive(true);
             Debug.Log("Game Over");
         }
+    }
+
+    public void OnPlayAgain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
