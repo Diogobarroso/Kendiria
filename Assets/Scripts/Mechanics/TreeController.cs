@@ -7,6 +7,7 @@ public class TreeController : MonoBehaviour
     [SerializeField] private LayerMask _fireLayerMask;
     [SerializeField] private Collider2D _collider;
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private Sprite _burntSprite;
     
     private float _currentHealth = 0.0f;
     private bool _isBurning = false;
@@ -26,7 +27,7 @@ public class TreeController : MonoBehaviour
         if (_currentHealth <= 0.0f)
         {
             _collider.enabled = false;
-            _spriteRenderer.color = Color.black;
+            _spriteRenderer.sprite = _burntSprite;
         }
     }
 
