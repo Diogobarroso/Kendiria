@@ -10,6 +10,8 @@ public class Fire : MonoBehaviour
     [SerializeField] private float _treeSpreadAcceleration;
     [SerializeField] private float flameAnimSpeed;
     [SerializeField] private float flameAnimHeight;
+    public float windAngle;
+    public float windSpeed;
     [SerializeField] private AudioClip flameExtinguishSFX;
     [HideInInspector] public List<Transform> flames = new List<Transform>();
     public Action OnFireExtinguished;

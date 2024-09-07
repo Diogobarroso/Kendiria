@@ -36,11 +36,11 @@ public class FlameController : MonoBehaviour
 
         if (spreadTime < 1.0f) return;
 
-        float initialAngle = Random.Range(0.0f, 70.0f);
+        float initialAngle = _fire.windAngle + Random.Range(-35.0f, 35.0f);
 
         for (float angle = initialAngle; angle < 360.0f + initialAngle; angle += 360.0f/5) // Check an even spacing around the flame
         {
-            Vector3 newFlamePosition = transform.position + Quaternion.AngleAxis(angle, Vector3.back) * Vector3.up * _fire.GetFlameSpreadDistance();
+            Vector3 newFlamePosition = transform.position + Quaternion.AngleAxis(angle, Vector3.back) * Vector3.up * (_fire.GetFlameSpreadDistance() + Random.Range(_fire.windSpeed / 2, _fire.windSpeed));
             RaycastHit2D hitInfo = Physics2D.CircleCast(newFlamePosition, 0.5f, Vector2.zero, Mathf.Infinity, _noBurnLayerMask);
 
             if (hitInfo.collider == null)
