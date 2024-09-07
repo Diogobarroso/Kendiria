@@ -7,6 +7,8 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] private PlayerManager _playerManager;
     [SerializeField] private GameObject _joinInstructions;
+    [SerializeField] private GameObject _startInstructions;
+    [SerializeField] private CounterController _counterController;
     [SerializeField] private GameObject _gameOverScreen;
     [SerializeField] private TextMeshProUGUI _waveCounter;
     [SerializeField] private Fire _firePrefab;
@@ -44,6 +46,7 @@ public class LevelManager : MonoBehaviour
     private void OnPlayerJoined(Character character)
     {
         _joinInstructions.SetActive(false);
+        _startInstructions.SetActive(true);
 
         _players.Add(character);
         character.OnReady += OnPlayerReady;
@@ -54,7 +57,10 @@ public class LevelManager : MonoBehaviour
 
     private void OnPlayerReady()
     {
-        if (currentWave == -1) StartNextWave();
+        if (currentWave == -1) {
+            _startInstructions.SetActive(false);
+            StartNextWave();
+        }
     }
 
     private void StartNextWave()
@@ -76,6 +82,7 @@ public class LevelManager : MonoBehaviour
         }
 
         _startWaveTimer = _timeBetweenWaves;
+        _counterController.AnimateCounter();
     }
 
     private void OnPlayerDeath(Character character)
