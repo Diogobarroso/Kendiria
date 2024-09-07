@@ -20,9 +20,9 @@ public class Fire : MonoBehaviour
     private void Start()
     {
         // Fire is always composed of a single flame, regardless
-        flames.Add(Instantiate(flamePrefab, this.transform).transform);
+        flames.Add(Instantiate(flamePrefab, this.transform.position, Quaternion.identity, this.transform).transform);
         flameAnimOffset.Add(Random.Range(0.0f, 10.0f));
-        flameBasePositions.Add(Vector2.zero);
+        flameBasePositions.Add(this.transform.position);
     }
 
     private void Update()

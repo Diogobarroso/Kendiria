@@ -13,6 +13,11 @@ public class Character : MonoBehaviour
 
     public float runSpeed = 1.0f;
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Destroy(gameObject);
+    }
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
