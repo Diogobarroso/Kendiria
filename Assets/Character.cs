@@ -17,7 +17,6 @@ public class Character : MonoBehaviour
     Vector2 lookAtPos;
     */
 
-    private Vector2 moveDirection = Vector2.zero;
     private Vector2 inputVector = Vector2.zero;
 
     public float moveSpeed = 1.0f;
@@ -34,21 +33,11 @@ public class Character : MonoBehaviour
 
     void Update()
     {
-        //horizontal = Input.GetAxisRaw("Horizontal");
-        //vertical = Input.GetAxisRaw("Vertical");
-
-        //lookAtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void FixedUpdate()
     {
-        //body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
-
-        //transform.LookAt(lookAtPos, transform.up);
-
-        moveDirection = transform.TransformDirection(inputVector);
-        moveDirection *= moveSpeed;
-        body.velocity = moveDirection;
+        body.velocity = inputVector * moveSpeed;
     }
 
     public void OnMove(InputAction.CallbackContext context)
