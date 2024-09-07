@@ -17,8 +17,10 @@ public class Character : MonoBehaviour
     Vector2 lookAtPos;
     */
 
-    private Vector2 moveDirection = Vector2.zero;
-    private Vector2 inputVector = Vector2.zero;
+    private Vector2 inputMove = Vector2.zero;
+    private Vector2 inputTurn = Vector2.zero;
+
+    private float turnDir = 0.0f;
 
     public float moveSpeed = 1.0f;
 
@@ -34,32 +36,29 @@ public class Character : MonoBehaviour
 
     void Update()
     {
-        //horizontal = Input.GetAxisRaw("Horizontal");
-        //vertical = Input.GetAxisRaw("Vertical");
-
-        //lookAtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void FixedUpdate()
     {
-        //body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+        body.velocity = inputMove * moveSpeed;
 
-        //transform.LookAt(lookAtPos, transform.up);
-
-        moveDirection = transform.TransformDirection(inputVector);
-        moveDirection *= moveSpeed;
-        body.velocity = moveDirection;
+        if (turnDir != 0.0f)
+            transform.rotation = Quaternion.Euler(0, 0, turnDir * Mathf.Rad2Deg);
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        inputVector = context.ReadValue<Vector2>();
+        inputMove = context.ReadValue<Vector2>();
+    }
+
+    public void OnFire(InputAction.CallbackContext context)
+    {
+        
     }
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        Vector2 lookAtPos = context.ReadValue<Vector2>();
-        float dir = Mathf.Atan2(lookAtPos.y, lookAtPos.x);
-        transform.rotation = Quaternion.Euler(0, 0, dir * Mathf.Rad2Deg);
+        Vector2 inputTurn = context.ReadValue<Vector2>();
+        turnDir = Mathf.Atan2(inputTurn.y, inputTurn.x);
     }
 }
