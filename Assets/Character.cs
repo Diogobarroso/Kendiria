@@ -35,6 +35,6 @@ public class Character : MonoBehaviour
     {
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
 
-        transform.LookAt(new Vector2(0,0) - lookAtPos,transform.up);
+        transform.LookAt(lookAtPos,transform.up);
     }
 }
