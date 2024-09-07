@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -37,6 +38,19 @@ public class LevelManager : MonoBehaviour
 
             if (_startWaveTimer <= 0.0f)
             {
+                foreach (var position in waves[currentWave].initialFlamesPosition)
+                {
+                    foreach (Character player in _players)
+                    {
+                        // TODO I don't have enough energy to make this magic values into configurable variables
+                        if (Vector2.Distance(player.transform.position, position) < 1.0f)
+                        {
+                            Vector3 direction = (position - (Vector2) player.transform.position).normalized;
+                            player.transform.position = player.transform.position + direction * 2.0f;
+                        }
+                    }
+                }
+                
                 _currentWaveFire.gameObject.SetActive(true);
                 _waveCounter.text = (currentWave + 1) + "/" + waves.Count;
             }
