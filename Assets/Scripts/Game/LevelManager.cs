@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
     private int currentWave = -1;
     [SerializeField] private float _timeBetweenWaves = 5.0f;
     private float _startWaveTimer = 0.0f;
-    private Fire _currentWaveFire = null;
+    public Fire _currentWaveFire = null;
 
     private void Start()
     {
