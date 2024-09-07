@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private PlayerManager _playerManager;
     [SerializeField] private GameObject _joinInstructions;
+    [SerializeField] private GameObject _gameOverScreen;
     // TODO: Fire "waves"?
     [SerializeField] private Fire _fire;
 
@@ -25,6 +27,8 @@ public class LevelManager : MonoBehaviour
 
         _players.Add(character);
         character._onDeath += OnPlayerDeath;
+
+        character.SetColor(playerColors[_players.IndexOf(character)]);
     }
 
     private void OnPlayerDeath(Character character)
@@ -33,10 +37,18 @@ public class LevelManager : MonoBehaviour
 
         if (_players.Count == 0)
         {
-            // TODO GAME OVER
+            _gameOverScreen.SetActive(true);
             Debug.Log("Game Over");
         }
+    }
 
-        character.SetColor(playerColors[_players.IndexOf(character)]);
+    public void OnPlayAgain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
