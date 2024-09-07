@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -22,5 +23,17 @@ public class LevelManager : MonoBehaviour
         _joinInstructions.SetActive(false);
 
         _players.Add(character);
+        character._onDeath += OnPlayerDeath;
+    }
+
+    private void OnPlayerDeath(Character character)
+    {
+        _players.Remove(character);
+
+        if (_players.Count == 0)
+        {
+            // TODO GAME OVER
+            Debug.Log("Game Over");
+        }
     }
 }
