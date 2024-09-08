@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
@@ -15,6 +16,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject _startInstructions;
     [SerializeField] private CounterController _counterController;
     [SerializeField] private GameObject _gameOverScreen;
+    [SerializeField] private GameObject _gameOverDefaultButton;
     [SerializeField] private TextMeshProUGUI _waveCounter;
     [SerializeField] private Fire _firePrefab;
 
@@ -81,6 +83,7 @@ public class LevelManager : MonoBehaviour
         if (currentWave == -1) {
             _startInstructions.SetActive(false);
             StartNextWave();
+            _playerManager.DisableJoining();
         }
     }
 
@@ -125,7 +128,8 @@ public class LevelManager : MonoBehaviour
         if (_players.Count == 0)
         {
             _gameOverScreen.SetActive(true);
-            _playerManager.DisableJoining();
+            EventSystem.current.SetSelectedGameObject(_gameOverDefaultButton);
+            //_playerManager.DisableJoining();
         }
     }
 
@@ -144,7 +148,8 @@ public class LevelManager : MonoBehaviour
         if (currentWave == waves.Count - 1)
         {
             _gameOverScreen.SetActive(true);
-            _playerManager.DisableJoining();
+            //_playerManager.DisableJoining();
+            EventSystem.current.SetSelectedGameObject(_gameOverDefaultButton);
         }
         else
         {
