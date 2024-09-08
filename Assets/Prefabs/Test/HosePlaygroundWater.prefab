@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b902d0a8fd4a01429f441e669c80041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeToLive: 1
+  _timeToLive: 0.5
 --- !u!114 &-6334000223158579526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,8 +211,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   baseSpeed: {x: 0, y: 0, z: 0}
   fire: {fileID: 0}
-  waterSpeed: 10
-  lifeTime: 0.5
+  waterSpeed: 5
 --- !u!95 &5216211379793825711
 Animator:
   serializedVersion: 5
