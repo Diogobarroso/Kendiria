@@ -112,12 +112,16 @@ public class Character : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        if (isDead)
+        { 
+            GetComponent<AudioSource>().Stop();
+            return;
+        }
         inputMove = context.ReadValue<Vector2>();
         if(inputMove.magnitude!=0){
             if(!GetComponent<AudioSource>().isPlaying){
                 GetComponent<AudioSource>().loop=true;
                 GetComponent<AudioSource>().Play();
-
             }
         }
         else{
