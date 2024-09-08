@@ -16,10 +16,6 @@ public class Hose : MonoBehaviour
 
     bool isHoseActive = false;
 
-    [SerializeField] private InputActionAsset controls;
-
-    private Vector3 lastFramePosition;
-
     private void Awake()
     {
     }
@@ -35,8 +31,6 @@ public class Hose : MonoBehaviour
             hosingTime = 0.0f;
             hoseWaterSFX.Stop();
         }
-
-        lastFramePosition = this.transform.position;
     }
 
     public void OnFireHose(InputAction.CallbackContext context)
@@ -60,7 +54,7 @@ public class Hose : MonoBehaviour
             GameObject newWater = Instantiate(water);
             newWater.transform.position = this.transform.position;
             newWater.transform.rotation = this.transform.parent.rotation;
-            newWater.GetComponent<WaterController>().direction = Quaternion.AngleAxis(Random.Range(-spreadAngle * 0.5f, spreadAngle * 0.5f), Vector3.back) * this.transform.parent.right;
+            newWater.GetComponent<WaterController>().direction = Quaternion.AngleAxis(Random.Range(-spreadAngle * 0.5f, spreadAngle * 0.5f), Vector3.back) * this.transform.right;
             newWater.GetComponent<WaterController>().baseSpeed = this.transform.parent.GetComponent<Character>().body.velocity;
         }
     }

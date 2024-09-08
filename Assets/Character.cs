@@ -20,9 +20,57 @@ public class Character : MonoBehaviour
     bool isDead = false;
 
     public Action OnReady;
-    
-    
 
+    private Hose hose;
+
+    [SerializeField] private Animator _characterAnimator;
+    private enum Orientation
+    {
+        Front,
+        Back,
+        Left,
+        Right
+    }
+    private Orientation _orientation = Orientation.Right;
+
+    private void ChangeOrientation()
+    {
+        Orientation orientation;
+
+        if (turnDir >= -Mathf.PI / 4 && turnDir <= Mathf.PI / 4)
+            orientation = Orientation.Right;
+        else if (turnDir > Mathf.PI / 4 && turnDir < 3 * Mathf.PI / 4)
+            orientation = Orientation.Back;
+        else if (turnDir < -Mathf.PI / 4 && turnDir > -3 * Mathf.PI / 4)
+            orientation = Orientation.Front;
+        else
+            orientation = Orientation.Left;
+            
+        if (_orientation == orientation)
+            return;
+
+        _orientation = orientation;
+
+        switch (_orientation)
+        {
+            case Orientation.Front:
+                _characterAnimator.SetTrigger("front");
+                break;
+            case Orientation.Back:
+                _characterAnimator.SetTrigger("back");
+                break;
+            case Orientation.Left:
+                _characterAnimator.SetTrigger("left");
+                break;
+            case Orientation.Right:
+                _characterAnimator.SetTrigger("right");
+                break;
+            default:
+                Debug.LogError("HOOOOOOOOOOW?!");
+                break;
+        }
+    }
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         isDead = true;
@@ -36,6 +84,7 @@ public class Character : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        hose = GetComponentInChildren<Hose>();
     }
 
     private void FixedUpdate()
@@ -45,8 +94,11 @@ public class Character : MonoBehaviour
 
         body.velocity = inputMove * moveSpeed;
 
-        if (turnDir != 0.0f)
-            transform.rotation = Quaternion.Euler(0, 0, turnDir * Mathf.Rad2Deg);
+        if (turnDir != 0.0f) {
+            hose.transform.rotation = Quaternion.Euler(0, 0, turnDir * Mathf.Rad2Deg);
+            ChangeOrientation();
+        }
+        //    transform.rotation = Quaternion.Euler(0, 0, turnDir * Mathf.Rad2Deg);
     }
 
     public void OnMove(InputAction.CallbackContext context)
