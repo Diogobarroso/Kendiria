@@ -104,7 +104,7 @@ public class Character : MonoBehaviour
         body.velocity = inputMove * moveSpeed;
 
         if (turnDir != 0.0f) {
-            hose.transform.rotation = Quaternion.Euler(0, 0, turnDir * Mathf.Rad2Deg);
+            hose.transform.localRotation = Quaternion.Euler(0, 0, turnDir * Mathf.Rad2Deg);
             ChangeOrientation();
         }
         //    transform.rotation = Quaternion.Euler(0, 0, turnDir * Mathf.Rad2Deg);
