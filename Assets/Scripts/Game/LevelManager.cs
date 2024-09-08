@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using UnityEngine.InputSystem;
 
 public class LevelManager : MonoBehaviour
 {
@@ -157,5 +158,10 @@ public class LevelManager : MonoBehaviour
         {
             StartNextWave();
         }
+    }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+
     }
 }
