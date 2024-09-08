@@ -12,6 +12,7 @@ public class FlameController : MonoBehaviour
     private float animTime = 0.0f;
     private Vector3 _basePosition;
     private float _animOffset;
+    private Hose hose;
 
     public void Initialize(Fire fire)
     {
@@ -22,6 +23,7 @@ public class FlameController : MonoBehaviour
     {
         _basePosition = transform.position;
         _animOffset = Random.Range(0.0f, 10.0f);
+        hose = GetComponentInChildren<Hose>();
     }
 
     // Update is called once per frame
@@ -73,6 +75,7 @@ public class FlameController : MonoBehaviour
     {
         if (other.TryGetComponent(out WaterController _))
         {
+            hose.HoseBeforeHoes();
             _fire.TryExtinguish(transform);
         }
     }
