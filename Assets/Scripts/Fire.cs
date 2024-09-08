@@ -22,19 +22,19 @@ public class Fire : MonoBehaviour
         //AddFlame(transform.position);
     }
 
-    public void TryExtinguish(Transform flame)
+    public bool TryExtinguish(Transform flame)
     {
         int index = flames.FindIndex(a => a != null && a.transform == flame);
         if (index == -1)
-            return;
+            return false;
         flames.RemoveAt(index);
         AudioSource.PlayClipAtPoint(flameExtinguishSFX, flame.position, 1);
-        Destroy(flame.gameObject);
 
         if (flames.Count == 0)
         {
             OnFireExtinguished?.Invoke();
         }
+        return true;
     }
 
     public void AddFlame(Vector3 position)
