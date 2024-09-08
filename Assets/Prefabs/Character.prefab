@@ -151,6 +151,9 @@ MonoBehaviour:
   turnDir: 0
   moveSpeed: 5
   playerColor: {fileID: 1157188764056628918}
+  PausePressedEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _characterAnimator: {fileID: 1097460195497607592}
 --- !u!50 &2049662737432298063
 Rigidbody2D:
@@ -369,10 +372,10 @@ MonoBehaviour:
     m_ActionName: Player/ToggleAutoAim[/XInputControllerWindows/leftTrigger,/Mouse/rightButton]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: aec306354e218834ebfe053bc61ffa2a, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: 
-        m_Mode: 5
+      - m_Target: {fileID: 5566560915382215055}
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
