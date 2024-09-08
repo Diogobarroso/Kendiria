@@ -8,14 +8,12 @@ public class MusicController : MonoBehaviour
     private AudioSource musicSource;
     [SerializeField] AudioClip[] musicParts;
     [SerializeField] LevelManager levelManager;
-    int currentSong = 0;
+    int currentSong = -1;
     // Start is called before the first frame update
     void Start()
     {
         musicSource = GetComponent<AudioSource>();
-        musicSource.clip = musicParts[0];
-        musicSource.Play();
-        Invoke("LoopMusic", musicSource.clip.length);
+        LoopMusic();
     }
 
 
@@ -26,7 +24,13 @@ public class MusicController : MonoBehaviour
             musicSource.clip = musicParts[(int)levelManager.currentWave/2];
             musicSource.Play();
             musicSource.timeSamples = time;
+            if(currentSong >= 0){
+                musicParts[currentSong].UnloadAudioData();
+            }
             currentSong = levelManager.currentWave/2;
+            if(currentSong+1 <3){
+                musicParts[currentSong+1].LoadAudioData();
+            }
         }
         Invoke("LoopMusic", musicSource.clip.length-musicSource.time);
     }
