@@ -32,9 +32,9 @@ public class AutoAim : MonoBehaviour
     void Update()
     {
         _timeSinceLastToggle += Time.deltaTime;
-        if (isActive)
+        if (isActive && lvlManager._currentWaveFire != null)
         {
-            Transform[] flames = lvlManager._currentWaveFire.flames.ToArray();
+            Transform[] flames = lvlManager._currentWaveFire?.flames.ToArray();
 
             flames = flames.OrderBy(f => Vector3.Distance(f.position, _char.transform.position)).ToArray();
 
