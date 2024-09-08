@@ -163,7 +163,7 @@ public class Character : MonoBehaviour
 
     public void OnPause(InputAction.CallbackContext context)
     {
-        if (!context.performed)
+        if (!context.performed || isDead)
             return;
         PausePressedEvent.Invoke();
     }
