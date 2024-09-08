@@ -6,6 +6,8 @@ public class FlameController : MonoBehaviour
     
     [SerializeField] private LayerMask _noBurnLayerMask;
 
+    [SerializeField] private GameObject smoke;
+
     private Fire _fire;
 
     private float spreadTime = 0.0f;
@@ -78,5 +80,10 @@ public class FlameController : MonoBehaviour
             hose.HoseBeforeHoes();
             _fire.TryExtinguish(transform);
         }
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(smoke);
     }
 }
