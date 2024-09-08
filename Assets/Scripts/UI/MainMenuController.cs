@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -33,6 +34,8 @@ public class MainMenuController : MonoBehaviour
         _credits.SetActive(false);
         _controls.SetActive(false);
         _mainMenu.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(_startButton.gameObject);
     }
 
     private void QuitGame()
@@ -45,6 +48,8 @@ public class MainMenuController : MonoBehaviour
         _credits.SetActive(true);
         _controls.SetActive(false);
         _mainMenu.SetActive(false);
+
+        EventSystem.current.SetSelectedGameObject(_backButton.gameObject);
     }
 
     private void ShowControls()
@@ -52,6 +57,8 @@ public class MainMenuController : MonoBehaviour
         _credits.SetActive(false);
         _controls.SetActive(true);
         _mainMenu.SetActive(false);
+
+        EventSystem.current.SetSelectedGameObject(_controlsBackButton.gameObject);
     }
 
     private void StartGame()
