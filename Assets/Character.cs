@@ -35,6 +35,9 @@ public class Character : MonoBehaviour
 
     private void ChangeOrientation()
     {
+        if (isDead)
+            return;
+
         Orientation orientation;
 
         if (turnDir >= -Mathf.PI / 4 && turnDir <= Mathf.PI / 4)
@@ -82,6 +85,9 @@ public class Character : MonoBehaviour
 
         this.enabled = false;
         GetComponentInChildren<Hose>().enabled = false;
+
+        _characterAnimator.SetTrigger("dead");
+        GetComponentInChildren<FireRadar>().enabled = false;
     }
 
     void Start()

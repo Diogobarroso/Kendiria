@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FireRadar : MonoBehaviour
@@ -46,5 +47,10 @@ public class FireRadar : MonoBehaviour
         // TODO I don't have enough energy to make this magic values into configurable variables
         transform.position = (Vector2) transform.parent.position + direction * 0.75f;
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
+    }
+
+    private void OnDisable()
+    {
+        _spriteRenderer.enabled = false;
     }
 }
