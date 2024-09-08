@@ -15,6 +15,6 @@ MonoBehaviour:
   initialFlamesPosition:
   - {x: 5.76, y: -0.13}
   windSpeed: 0
-  windDirection: {x: 0, y: 0}
-  flameSpreadSpeed: 0
+  windAngle: 0
+  flameSpreadSpeed: 0.2
   humidity: 0

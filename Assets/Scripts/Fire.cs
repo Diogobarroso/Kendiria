@@ -49,6 +49,11 @@ public class Fire : MonoBehaviour
         return flameSpreadSpeed;
     }
 
+    public void SetFlameSpreadSpeed(float newSpreadSpeed)
+    {
+        flameSpreadSpeed = newSpreadSpeed;
+    }
+
     public float GetFlameSpreadDistance()
     {
         return flameSpreadDistance;

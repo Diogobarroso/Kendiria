@@ -43,7 +43,7 @@ public class FlameController : MonoBehaviour
             float windDistanceEffect = Random.Range(_fire.windSpeed / 2, _fire.windSpeed);
             Vector3 flameDisplacement = Quaternion.AngleAxis(angle, Vector3.back) * Vector3.up * (_fire.GetFlameSpreadDistance());
             float windInfluence = (360.0f - Mathf.Abs(_fire.windAngle - angle)) / 360.0f;
-            flameDisplacement *= windDistanceEffect * windInfluence;
+            flameDisplacement += flameDisplacement * windDistanceEffect * windInfluence;
             Vector3 newFlamePosition = transform.position + flameDisplacement;
 
             RaycastHit2D hitInfo = Physics2D.CircleCast(newFlamePosition, 0.5f, Vector2.zero, Mathf.Infinity, _noBurnLayerMask);

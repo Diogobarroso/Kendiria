@@ -97,6 +97,7 @@ public class LevelManager : MonoBehaviour
         _currentWaveFire.gameObject.SetActive(false);
         _currentWaveFire.OnFireExtinguished += OnFireExtinguished;
         _currentWaveFire.SetWind(waves[currentWave].windAngle, waves[currentWave].windSpeed);
+        _currentWaveFire.SetFlameSpreadSpeed(waves[currentWave].flameSpreadSpeed);
 
         foreach (var position in waves[currentWave].initialFlamesPosition)
         {

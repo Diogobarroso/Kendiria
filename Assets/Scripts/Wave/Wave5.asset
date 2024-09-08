@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Wave5
   m_EditorClassIdentifier: 
   initialFlamesPosition:
-  - {x: 5.76, y: -0.13}
+  - {x: 6, y: -3}
+  - {x: -7, y: 10}
   windSpeed: 1
-  windDirection: {x: -1, y: 0}
-  flameSpreadSpeed: 2
+  windAngle: 90
+  flameSpreadSpeed: 0.2
   humidity: 0
