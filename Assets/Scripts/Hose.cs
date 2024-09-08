@@ -29,7 +29,8 @@ public class Hose : MonoBehaviour
         else
         {
             hosingTime = 0.0f;
-            hoseWaterSFX.Stop();
+            if (hoseWaterSFX != null)
+                hoseWaterSFX.Stop();
         }
     }
 
@@ -40,7 +41,7 @@ public class Hose : MonoBehaviour
 
     public void HoseBeforeHoes()
     {
-        if(hosingTime == 0){
+        if(hoseStartSFX != null && hosingTime == 0){
             hoseStartSFX.Play();
         }
         
@@ -48,14 +49,16 @@ public class Hose : MonoBehaviour
 
         if (hosingTime > 1 / hosingSpeed)
         {
-            if(!hoseWaterSFX.isPlaying){
+            if(hoseWaterSFX != null && !hoseWaterSFX.isPlaying)
+            {
                 hoseWaterSFX.Play();
             }
             GameObject newWater = Instantiate(water);
             newWater.transform.position = this.transform.position;
             newWater.transform.rotation = this.transform.parent.rotation;
             newWater.GetComponent<WaterController>().direction = Quaternion.AngleAxis(Random.Range(-spreadAngle * 0.5f, spreadAngle * 0.5f), Vector3.back) * this.transform.right;
-            newWater.GetComponent<WaterController>().baseSpeed = this.transform.parent.GetComponent<Character>().body.velocity;
+            if (this.transform.parent.GetComponent<Character>() != null)
+                newWater.GetComponent<WaterController>().baseSpeed = this.transform.parent.GetComponent<Character>().body.velocity;
         }
     }
 }
