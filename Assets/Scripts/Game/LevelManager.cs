@@ -64,6 +64,13 @@ public class LevelManager : MonoBehaviour
                 _waveCounter.text = (currentWave + 1) + "/" + waves.Count;
 
                 OnWaveStart?.Invoke(_currentWaveFire.flames);
+
+                if (currentWave == 0) {
+                    foreach (Character player in _players)
+                    {
+                        player.PausePressedEvent.AddListener(OnPause);
+                    }
+                }
             }
         }
     }
@@ -76,8 +83,6 @@ public class LevelManager : MonoBehaviour
         _players.Add(character);
         character.OnReady += OnPlayerReady;
         character._onDeath += OnPlayerDeath;
-
-        character.PausePressedEvent.AddListener(OnPause);
 
         character.SetColor(playerColors[_players.IndexOf(character)]);
     }
