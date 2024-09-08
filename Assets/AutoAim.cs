@@ -36,6 +36,9 @@ public class AutoAim : MonoBehaviour
         {
             Transform[] flames = lvlManager._currentWaveFire?.flames.ToArray();
 
+            if (flames.Length == 0)
+                return;
+
             flames = flames.OrderBy(f => Vector3.Distance(f.position, _char.transform.position)).ToArray();
 
             Vector2 turn = new Vector2(flames[0].position.x - _char.transform.position.x, flames[0].position.y - _char.transform.position.y).normalized;
