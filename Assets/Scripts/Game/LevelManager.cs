@@ -23,6 +23,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private AudioSource _windAudioSource;
     private List<Character> _players = new List<Character>();
     [SerializeField] private List<Color> playerColors;
+    [SerializeField] private GameObject _pauseMenu;
 
     [SerializeField] private List<Wave> waves;
     public int currentWave = -1;
@@ -75,6 +76,8 @@ public class LevelManager : MonoBehaviour
         _players.Add(character);
         character.OnReady += OnPlayerReady;
         character._onDeath += OnPlayerDeath;
+
+        character.PausePressedEvent.AddListener(OnPause);
 
         character.SetColor(playerColors[_players.IndexOf(character)]);
     }
@@ -160,8 +163,18 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void OnPause(InputAction.CallbackContext context)
+    private void OnPause()
     {
-
+        if (currentWave == -1) return;
+        if (Time.deltaTime > 0)
+        {
+            Time.timeScale = 0;
+            _pauseMenu.SetActive(true);
+        }
+        else
+        {
+            _pauseMenu.SetActive(false);
+            Time.timeScale = 1;
+        }
     }
 }

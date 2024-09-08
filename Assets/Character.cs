@@ -1,6 +1,7 @@
 using System;
 //using System.Numerics;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class Character : MonoBehaviour
@@ -22,6 +23,8 @@ public class Character : MonoBehaviour
     public Action OnReady;
 
     private Hose hose;
+
+    public UnityEvent PausePressedEvent;
 
     [SerializeField] private Animator _characterAnimator;
     private enum Orientation
@@ -156,5 +159,12 @@ public class Character : MonoBehaviour
     public void SetColor(Color color)
     {
         playerColor.color = color;
+    }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+        PausePressedEvent.Invoke();
     }
 }
