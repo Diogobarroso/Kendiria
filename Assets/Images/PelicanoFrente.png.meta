@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7df54ebeae3a25c4db3e3510f2ebc03d
+guid: 9abbfc4575454f742b0b33bffea9ec35
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,280 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: PelicanoFrente_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1456
+        width: 732
+        height: 670
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027c7754cf56bec4cb610eb6cc9b5a66
+      internalID: 203386908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoFrente_1
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 1452
+        width: 828
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9567384255ae94349b11ae739913f988
+      internalID: -441782132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoFrente_2
+      rect:
+        serializedVersion: 2
+        x: 1962
+        y: 1456
+        width: 1030
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b53c38762d70c64da2682f5ff83e237
+      internalID: 167369640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoFrente_3
+      rect:
+        serializedVersion: 2
+        x: 3110
+        y: 1460
+        width: 1132
+        height: 610
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3471bd8a274ba1a4d807aa6f28e2b031
+      internalID: 755530862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoFrente_4
+      rect:
+        serializedVersion: 2
+        x: 4375
+        y: 1361
+        width: 990
+        height: 709
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f6f8291172445540a9813b21424563e
+      internalID: -1106483012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoFrente_5
+      rect:
+        serializedVersion: 2
+        x: 5490
+        y: 1275
+        width: 1008
+        height: 799
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 356dd63290657da4ea04a825db8c119d
+      internalID: -1072084267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoFrente_6
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 68
+        width: 511
+        height: 957
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba82199fe767820468fa2a1b56040e57
+      internalID: -1904732998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoFrente_7
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 190
+        width: 1008
+        height: 842
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5997b98a84bc8da45be373e60626dbc8
+      internalID: -2099901040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoFrente_8
+      rect:
+        serializedVersion: 2
+        x: 1999
+        y: 271
+        width: 990
+        height: 754
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49141c36ca2ca294bbad9ccc91f7cb4f
+      internalID: -1296972146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoFrente_9
+      rect:
+        serializedVersion: 2
+        x: 3125
+        y: 374
+        width: 1132
+        height: 662
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bddb2f6eb0e0216468e74729867ec506
+      internalID: 670783346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoFrente_10
+      rect:
+        serializedVersion: 2
+        x: 4339
+        y: 374
+        width: 1029
+        height: 658
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 514c5e68d910bf0479239b0bc3dc3bc3
+      internalID: 271328051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoFrente_11
+      rect:
+        serializedVersion: 2
+        x: 5567
+        y: 374
+        width: 831
+        height: 658
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37c262b2dec08e4fae2ddcbd1039076
+      internalID: 1248397437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoFrente_12
+      rect:
+        serializedVersion: 2
+        x: 6682
+        y: 355
+        width: 735
+        height: 670
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcff0805a3ed0814a93380aa1de470e9
+      internalID: -990294366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +392,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PelicanoFrente_0: 203386908
+      PelicanoFrente_1: -441782132
+      PelicanoFrente_10: 271328051
+      PelicanoFrente_11: 1248397437
+      PelicanoFrente_12: -990294366
+      PelicanoFrente_2: 167369640
+      PelicanoFrente_3: 755530862
+      PelicanoFrente_4: -1106483012
+      PelicanoFrente_5: -1072084267
+      PelicanoFrente_6: -1904732998
+      PelicanoFrente_7: -2099901040
+      PelicanoFrente_8: -1296972146
+      PelicanoFrente_9: 670783346
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

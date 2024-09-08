@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9e41c5b7dd357bc44a298cab8790097d
+guid: 40fd013b0007332408ca3b8ae2157ee5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,280 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: PelicanoTraz_0
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 1470
+        width: 734
+        height: 671
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42b8466984ebb974a8a0540456b53175
+      internalID: -599253429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoTraz_1
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 1462
+        width: 832
+        height: 608
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de8f43a0c28627542bf9e97e97bc1bf6
+      internalID: 1794724558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoTraz_2
+      rect:
+        serializedVersion: 2
+        x: 2109
+        y: 1466
+        width: 1028
+        height: 608
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0b55ff8c1620864ab55b9b444d3f087
+      internalID: 1889216715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoTraz_3
+      rect:
+        serializedVersion: 2
+        x: 3283
+        y: 1462
+        width: 1133
+        height: 608
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e1b83360c8f9e499b95b1508729add
+      internalID: -312772213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoTraz_4
+      rect:
+        serializedVersion: 2
+        x: 4620
+        y: 1384
+        width: 989
+        height: 702
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4beefb07c7cc4a438a835eb3a4657be
+      internalID: -1990306619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoTraz_5
+      rect:
+        serializedVersion: 2
+        x: 5801
+        y: 1285
+        width: 1009
+        height: 793
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d0ca795fe86ec54a8a47b92776844b6
+      internalID: 42492863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoTraz_6
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 69
+        width: 510
+        height: 957
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2202f9cefb9d8ba4f8a66caab1ee8f6d
+      internalID: -587012883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoTraz_7
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 186
+        width: 1009
+        height: 844
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0382e3d023c451449e3ed2d726a2b95
+      internalID: -22203873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoTraz_8
+      rect:
+        serializedVersion: 2
+        x: 2133
+        y: 269
+        width: 992
+        height: 753
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3b02752fba4a964a9276be21c3b7c79
+      internalID: 1217411411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoTraz_9
+      rect:
+        serializedVersion: 2
+        x: 3338
+        y: 355
+        width: 1133
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce3cefb9fbde86a499e536eaf96ee501
+      internalID: 1280560121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoTraz_10
+      rect:
+        serializedVersion: 2
+        x: 4624
+        y: 363
+        width: 1032
+        height: 659
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e9f191afb1101448a87d4bb40a94fe6
+      internalID: 422768963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoTraz_11
+      rect:
+        serializedVersion: 2
+        x: 5928
+        y: 363
+        width: 831
+        height: 659
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc52fe38ff08d8f4b8430cb8903041c3
+      internalID: -1681076200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PelicanoTraz_12
+      rect:
+        serializedVersion: 2
+        x: 7092
+        y: 363
+        width: 734
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73217e01f55e77448ae62c5547e3542b
+      internalID: -767466552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +392,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PelicanoTraz_0: -599253429
+      PelicanoTraz_1: 1794724558
+      PelicanoTraz_10: 422768963
+      PelicanoTraz_11: -1681076200
+      PelicanoTraz_12: -767466552
+      PelicanoTraz_2: 1889216715
+      PelicanoTraz_3: -312772213
+      PelicanoTraz_4: -1990306619
+      PelicanoTraz_5: 42492863
+      PelicanoTraz_6: -587012883
+      PelicanoTraz_7: -22203873
+      PelicanoTraz_8: 1217411411
+      PelicanoTraz_9: 1280560121
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
