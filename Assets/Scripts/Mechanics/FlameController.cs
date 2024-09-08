@@ -78,12 +78,12 @@ public class FlameController : MonoBehaviour
         if (other.TryGetComponent(out WaterController _))
         {
             hose.HoseBeforeHoes();
-            _fire.TryExtinguish(transform);
+            if(_fire.TryExtinguish(transform)){
+                Instantiate(smoke);
+                Destroy(gameObject);
+
+            }
         }
     }
 
-    private void OnDestroy()
-    {
-        Instantiate(smoke);
-    }
 }
