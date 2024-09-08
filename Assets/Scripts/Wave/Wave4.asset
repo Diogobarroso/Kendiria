@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Wave4
   m_EditorClassIdentifier: 
   initialFlamesPosition:
-  - {x: 5.76, y: -0.13}
-  windSpeed: 0
-  windDirection: {x: 0, y: 0}
-  flameSpreadSpeed: 5
+  - {x: -9, y: -5}
+  windSpeed: 1
+  windAngle: 0
+  flameSpreadSpeed: 0.2
   humidity: 0

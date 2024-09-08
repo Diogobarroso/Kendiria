@@ -79,6 +79,9 @@ public class Character : MonoBehaviour
         body.isKinematic = true;
         body.velocity = Vector2.zero;
         GetComponent<Collider2D>().enabled = false;
+
+        this.enabled = false;
+        GetComponentInChildren<Hose>().enabled = false;
     }
 
     void Start()
