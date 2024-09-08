@@ -700,7 +700,7 @@ MonoBehaviour:
   _controlsBackButton: {fileID: 1438367600}
   _mainMenu: {fileID: 1778308251}
   _credits: {fileID: 1842975256}
-  _controls: {fileID: 0}
+  _controls: {fileID: 814144823}
   _gameSceneName: MainGameScene
 --- !u!1 &401416359
 GameObject:
