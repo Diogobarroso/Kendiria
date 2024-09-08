@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Fire : MonoBehaviour
 {
     [SerializeField] private FlameController flamePrefab;
-    [SerializeField] private float flameSpreadSpeed;
+    [SerializeField] private float flameSpreadSpeed; 
     [SerializeField] private float flameSpreadDistance;
     [SerializeField] private float _treeSpreadAcceleration;
     [SerializeField] private float flameAnimSpeed;
@@ -66,5 +67,11 @@ public class Fire : MonoBehaviour
     public float GetTreeSpreadAcceleration()
     {
         return _treeSpreadAcceleration;
+    }
+
+    public void SetWind(float angle, float speed)
+    {
+        windAngle = angle;
+        windSpeed = speed;
     }
 }

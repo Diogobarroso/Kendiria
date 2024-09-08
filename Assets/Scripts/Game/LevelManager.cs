@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class LevelManager : MonoBehaviour
 {
+    public TextMeshProUGUI _windSpeed;
+    public Transform _windDirection;
+
     [SerializeField] private PlayerManager _playerManager;
     [SerializeField] private GameObject _joinInstructions;
     [SerializeField] private GameObject _startInstructions;
@@ -92,10 +96,21 @@ public class LevelManager : MonoBehaviour
         _currentWaveFire = Instantiate(_firePrefab, Vector2.zero, Quaternion.identity);
         _currentWaveFire.gameObject.SetActive(false);
         _currentWaveFire.OnFireExtinguished += OnFireExtinguished;
+        _currentWaveFire.SetWind(waves[currentWave].windAngle, waves[currentWave].windSpeed);
 
         foreach (var position in waves[currentWave].initialFlamesPosition)
         {
             _currentWaveFire.AddFlame(position);
+        }
+        if (waves[currentWave].windSpeed > 0.0f)
+        {
+            _windSpeed.text = waves[currentWave].windSpeed + " m/s";
+            _windDirection.rotation = Quaternion.Euler(0, 0, waves[currentWave].windAngle);
+        }
+        else
+        {
+            _windSpeed.text = "No wind";
+            _windDirection.rotation = Quaternion.Euler(0, 0, 0);
         }
 
         _startWaveTimer = _timeBetweenWaves;
