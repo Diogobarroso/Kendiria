@@ -19,12 +19,12 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject _gameOverDefaultButton;
     [SerializeField] private TextMeshProUGUI _waveCounter;
     [SerializeField] private Fire _firePrefab;
-
+    [SerializeField] private AudioSource _windAudioSource;
     private List<Character> _players = new List<Character>();
     [SerializeField] private List<Color> playerColors;
 
     [SerializeField] private List<Wave> waves;
-    private int currentWave = -1;
+    public int currentWave = -1;
     [SerializeField] private float _timeBetweenWaves = 5.0f;
     private float _startWaveTimer = 0.0f;
     public Fire _currentWaveFire = null;
@@ -110,13 +110,15 @@ public class LevelManager : MonoBehaviour
         {
             _windSpeed.text = waves[currentWave].windSpeed + " m/s";
             _windDirection.rotation = Quaternion.Euler(0, 0, waves[currentWave].windAngle);
+            
         }
         else
         {
             _windSpeed.text = "No wind";
             _windDirection.rotation = Quaternion.Euler(0, 0, 0);
         }
-
+        _windAudioSource.volume = Mathf.Clamp01(0.4f * waves[currentWave].windSpeed);
+        _windAudioSource.panStereo = Mathf.Sin(waves[currentWave].windAngle*Mathf.PI/180);
         _startWaveTimer = _timeBetweenWaves;
         _counterController.AnimateCounter();
     }
