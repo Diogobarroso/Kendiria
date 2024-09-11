@@ -84,7 +84,13 @@ public class LevelManager : MonoBehaviour
         character.OnReady += OnPlayerReady;
         character._onDeath += OnPlayerDeath;
 
-        character.SetColor(playerColors[_players.IndexOf(character)]);
+        int colorIndex = _players.IndexOf(character) % playerColors.Count;
+
+        character.SetColor(playerColors[colorIndex]);
+
+#if UNITY_WEBGL
+        OnPlayerReady();
+#endif
     }
 
     private void OnPlayerReady()

@@ -27,6 +27,10 @@ public class MainMenuController : MonoBehaviour
         _backButton.onClick.AddListener(ShowMainMenu);
         _controlsButton.onClick.AddListener(ShowControls);
         _controlsBackButton.onClick.AddListener(ShowMainMenu);
+
+#if UNITY_WEBGL
+        _quitButton.gameObject.SetActive(false);
+#endif
     }
 
     private void ShowMainMenu()
